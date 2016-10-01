@@ -3,6 +3,8 @@
 
 Django extension to assemble ZIP archives dynamically using Nginx with [mod_zip](https://github.com/evanmiller/mod_zip).
 
+ZIP archive generation alternatives such as [ZipStream](https://github.com/SpiderOak/ZipStream) can tie up your web server thread and make Python do the heavy lifting. To achieve higher performance, django-zip-stream offloads ZIP archive generation to Nginx/[mod_zip](https://github.com/evanmiller/mod_zip) which frees up Python web servers to serve other clients.
+
 ## Examples
 ##### Django view that streams a zip with 2 files
 ```python
