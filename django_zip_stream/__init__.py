@@ -8,7 +8,7 @@ except ImportError:
 class TransferZipResponse(StreamingHttpResponse):
     """ Streaming zip response. """
 
-    def __init__(self, filename, files, content_type="application/zip"):
+    def __init__(self, filename, files):
         """
         Parameters:
         filename (string) - Name of the zip file to be streamed.
@@ -20,7 +20,7 @@ class TransferZipResponse(StreamingHttpResponse):
             [self._build_content(file_info) for file_info in files])
 
         super(TransferZipResponse, self).__init__(
-            content, status=200, content_type=content_type)
+            content, status=200, content_type="application/zip")
         self["X-Archive-Files"] = 'zip'
         self['Content-Disposition'] = (
             'attachment; filename="{}"'.format(filename))
