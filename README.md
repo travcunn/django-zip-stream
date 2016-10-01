@@ -1,2 +1,2 @@
 # django-zip-stream
-Djagno extension to assemble ZIP archives dynamically
+Django extension to assemble ZIP archives dynamically
