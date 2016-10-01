@@ -15,12 +15,12 @@ class TransferZipResponse(StreamingHttpResponse):
         """
 
         content = "\n".join([self._build_content(x) for x in transfer_files])
-    
-        super(TransferZipResponse, self).__init__(content, status=200,
-                                                  content_type=content_type)
+
+        super(TransferZipResponse, self).__init__(
+            content, status=200, content_type=content_type)
         self["X-Archive-Files"] = 'zip'
         self['Content-Disposition'] = (
-                    'attachment; filename="{}"'.format(filename))
+            'attachment; filename="{}"'.format(filename))
 
     @staticmethod
     def _build_content(file_info):
