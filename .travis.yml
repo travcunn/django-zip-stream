@@ -9,9 +9,6 @@ python:
   - "pypy"
 
 env:
-  - DJANGO=1.4
-  - DJANGO=1.5
-  - DJANGO=1.6
   - DJANGO=1.7
   - DJANGO=1.8
   - DJANGO=1.9
@@ -19,23 +16,15 @@ env:
 
 matrix:
   exclude:
-    - python: "3.4"
-      env: DJANGO=1.4
-    - python: "3.5"
-      env: DJANGO=1.4
-    - python: "3.5"
-      env: DJANGO=1.5
-    - python: "3.5"
-      env: DJANGO=1.6
     - python: "3.5"
       env: DJANGO=1.7
 
 install:
   - pip install Django==$DJANGO
-  - pip install mock pytest pytest-cov codecov
+  - pip install coverage django-nose codecov
 
 script:
-  - "python manage.py test django_zip_stream"
+  - "python manage.py test --settings=tests.settings"
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)
