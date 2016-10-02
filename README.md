@@ -7,7 +7,7 @@ ZIP archive generation alternatives such as [ZipStream](https://github.com/Spide
 
 ## Requirements
 - Django 1.4 +
-- Python 2.7, 3.4, or 3.5
+- Python 2.7, 3.4, 3.5, or pypy
 
 See the Travis CI build matrix for detailed information regarding the latest master.
 
