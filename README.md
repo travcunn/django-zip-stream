@@ -22,3 +22,8 @@ def download_zip(request):
     ]
     return TransferZipResponse(filename='download.zip', files=files)
 ```
+
+## Resources
+- Code repository: https://github.com/travcunn/django-zip-stream
+- Bugtracker: https://github.com/travcunn/django-zip-stream/issues
+- Continuous integration: https://travis-ci.org/travcunn/django-zip-stream
