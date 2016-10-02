@@ -19,7 +19,7 @@ class TransferZipResponseTestCase(django.test.TestCase):
         self.assertEqual(response['Content-Type'], 'application/zip')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.content,
-                         "- /chicago.jpg /home/django/chicago.jpg 4096")
+                         b"- /chicago.jpg /home/django/chicago.jpg 4096")
 
     def test_zip_multiple_files(self):
         """ Test creating a zip for multiple files. """
@@ -33,5 +33,5 @@ class TransferZipResponseTestCase(django.test.TestCase):
         self.assertEqual(response['Content-Type'], 'application/zip')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.content,
-                         "- /chicago.jpg /home/django/chicago.jpg 4096\n"
-                         "- /portland.jpg /home/django/portland.jpg 4096")
+                         b"- /chicago.jpg /home/django/chicago.jpg 4096\n"
+                         b"- /portland.jpg /home/django/portland.jpg 4096")
