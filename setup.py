@@ -1,17 +1,17 @@
-#!/usr/bin/env python
+"""A setuptools based setup module to install django-zip-stream."""
 from setuptools import setup
 
 try:
     import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst')
+    LONG_DESCRIPTION = pypandoc.convert('README.md', 'rst')
 except (IOError, ImportError):
-    long_description = ''
+    LONG_DESCRIPTION = ''
 
 setup(
     name='django-zip-stream',
     version='0.0.1',
-    description='Django extension to assemble ZIP archives dynamically using Nginx with mod_zip.',
-    long_description=long_description,
+    description='Django extension to assemble ZIP archives dynamically.',
+    long_description=LONG_DESCRIPTION,
     author='Travis Cunningham',
     author_email='tcunningham@smartfile.com',
     url='https://github.com/travcunn/django-zip-stream',
