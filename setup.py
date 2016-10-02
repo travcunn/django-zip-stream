@@ -16,11 +16,12 @@ setup(
     author_email='tcunningham@smartfile.com',
     url='https://github.com/travcunn/django-zip-stream',
     license='MIT',
-    packages=['django-zip-stream'],
-    package_dir={'django-zip-stream': 'django-zip-stream'},
+    packages=['django_zip_stream'],
+    package_dir={'django_zip_stream': 'django_zip_stream'},
     install_requires=[
-        'pytest',
-        'pytest-cov',
+        'Django>=1.5',
+        'django-nose',
+        'coverage',
         'mock',
         'tox',
     ], )

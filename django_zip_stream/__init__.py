@@ -1,11 +1,8 @@
 """ Django zip stream. """
-try:
-    from django.http import StreamingHttpResponse
-except ImportError:
-    from django.http import HttpResponse as StreamingHttpResponse
+from django.http import HttpResponse
 
 
-class TransferZipResponse(StreamingHttpResponse):
+class TransferZipResponse(HttpResponse):
     """ Streaming zip response. """
 
     def __init__(self, filename, files):
@@ -21,6 +18,7 @@ class TransferZipResponse(StreamingHttpResponse):
 
         super(TransferZipResponse, self).__init__(
             content, status=200, content_type="application/zip")
+
         self["X-Archive-Files"] = 'zip'
         self['Content-Disposition'] = (
             'attachment; filename="{}"'.format(filename))
